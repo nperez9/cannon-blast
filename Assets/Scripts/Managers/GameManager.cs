@@ -32,6 +32,24 @@ public class GameManager : MonoBehaviour
             isInCannon = false;
             activeCannon = null;
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Pause();
+        }
+    }
+
+    private void Pause()
+    {
+        if(Time.timeScale != 0)
+        {
+            Time.timeScale = 0;
+            //TODO: SHOW PAUSE
+        }
+        else
+        {
+            Time.timeScale = 1;
+            //TODO: STOP PAUSE
+        }
     }
     public void Lose()
     {
@@ -40,14 +58,13 @@ public class GameManager : MonoBehaviour
 
     public void CannonCollision(Collision2D collision, Cannon cannon)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && activeCannon != cannon)
         {
-            activeCannon = cannon;
-            Transform firePoint = cannon.GetComponentInChildren<Transform>();
-            isInCannon = true;
             BoxCollider2D cannonCollider = cannon.gameObject.GetComponent<BoxCollider2D>();
             cannonCollider.enabled = false;
-            bullet.SetInCannon(firePoint.position);
+            activeCannon = cannon;
+            isInCannon = true;
+            bullet.SetInCannon(cannon.getFirePoint());
         }
     }
 }

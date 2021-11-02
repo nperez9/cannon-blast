@@ -17,15 +17,18 @@ public class Bullet : MonoBehaviour
 
     public void Fire(float force = 1.0f)
     {
+        transform.SetParent(null);
         rb.bodyType = RigidbodyType2D.Dynamic;
         boxCollider.enabled = true;
         rb.AddForce(Vector2.up * force * baseForce, ForceMode2D.Impulse);
     }
 
-    public void SetInCannon(Vector3 position) 
+    public void SetInCannon(Transform firePoint) 
     {
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0.0f;
         rb.bodyType = RigidbodyType2D.Kinematic;
-        boxCollider.enabled = false;
-        transform.position = position;
+        transform.position = firePoint.position;
+        transform.SetParent(firePoint);
     }
 }

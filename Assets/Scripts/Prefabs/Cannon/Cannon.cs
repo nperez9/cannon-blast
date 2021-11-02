@@ -17,19 +17,37 @@ namespace Prefabs {
 
         [SerializeField] int dirX = 1;
         [SerializeField] int dirY = 1;
+
         [SerializeField] Vector2 moveFrom = new Vector2(0, 0);
         [SerializeField] Vector2 moveTo = new Vector2(0, 0);
+        [SerializeField] Transform firePoint = null;
 
         CannonManager cannonManager = null;
+        BoxCollider2D boxCollider = null;
 
         public float getForce()
         {
             return force;
         }
 
+        public Transform getFirePoint()
+        {
+            return firePoint;
+        }
+
         public void SetCannonManager(CannonManager cm)
         {
             cannonManager = cm;
+        }
+
+        public void SetBullet(GameObject bullet)
+        {
+            
+        }
+
+        private void Start()
+        {
+            boxCollider = GetComponent<BoxCollider2D>();
         }
 
         void Update()
@@ -107,6 +125,12 @@ namespace Prefabs {
         private void OnCollisionEnter2D(Collision2D collision)
         {
             cannonManager.CannonCollision(collision, this);
+        }
+
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            // boxCollider.enabled = true;            
         }
     }
 }

@@ -109,6 +109,7 @@ MonoBehaviour:
   dirY: 1
   moveFrom: {x: 0, y: 0}
   moveTo: {x: 0, y: 0}
+  firePoint: {fileID: 1588612473081559209}
 --- !u!61 &-9176531834267840093
 BoxCollider2D:
   m_ObjectHideFlags: 0
