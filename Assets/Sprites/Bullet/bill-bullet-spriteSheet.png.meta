@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: 945e748b7d88aae47a7c5e852078cce4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3143754358163529157
+    second: bill-bullet-spriteSheet_0
+  - first:
+      213: -8661358496189604965
+    second: bill-bullet-spriteSheet_1
+  - first:
+      213: 3355604242794730403
+    second: bill-bullet-spriteSheet_2
+  - first:
+      213: -9219127993194652422
+    second: bill-bullet-spriteSheet_3
+  - first:
+      213: -7272599502957403442
+    second: bill-bullet-spriteSheet_4
+  - first:
+      213: 1833936528807261628
+    second: bill-bullet-spriteSheet_5
+  - first:
+      213: -6937397760178771730
+    second: bill-bullet-spriteSheet_6
+  - first:
+      213: 3636303932821752295
+    second: bill-bullet-spriteSheet_7
+  - first:
+      213: -7755457721892191048
+    second: bill-bullet-spriteSheet_8
+  - first:
+      213: 7760296331237566496
+    second: bill-bullet-spriteSheet_9
+  - first:
+      213: 8364191018504475647
+    second: bill-bullet-spriteSheet_10
+  - first:
+      213: 8187304665425999957
+    second: bill-bullet-spriteSheet_11
+  - first:
+      213: 3112129001942940105
+    second: bill-bullet-spriteSheet_12
+  - first:
+      213: -2001909560403556181
+    second: bill-bullet-spriteSheet_13
+  - first:
+      213: -7196691952901675164
+    second: bill-bullet-spriteSheet_14
+  - first:
+      213: -8346859657359076348
+    second: bill-bullet-spriteSheet_15
+  - first:
+      213: 1649439275360437684
+    second: bill-bullet-spriteSheet_16
+  - first:
+      213: -3904543494968610046
+    second: bill-bullet-spriteSheet_17
+  - first:
+      213: 709345503397819964
+    second: bill-bullet-spriteSheet_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 28
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 113
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32a39c41142f54d0800000000000000
+      internalID: -3143754358163529157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 113
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b9e4a665cacc780800000000000000
+      internalID: -8661358496189604965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 113
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3d292b740819e20800000000000000
+      internalID: 3355604242794730403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 93
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afcd5ca6fe31f0080800000000000000
+      internalID: -9219127993194652422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 93
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec2aa80b849821b90800000000000000
+      internalID: -7272599502957403442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 93
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb57b2c6e83737910800000000000000
+      internalID: 1833936528807261628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 65
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee824f63e7969bf90800000000000000
+      internalID: -6937397760178771730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 68
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e94233392fb67230800000000000000
+      internalID: 3636303932821752295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 68
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b44e08ca441f5490800000000000000
+      internalID: -7755457721892191048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 43
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028ae2fb56c12bb60800000000000000
+      internalID: 7760296331237566496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 41
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3d87b7a63931470800000000000000
+      internalID: 8364191018504475647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 44
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5587d9a07362f9170800000000000000
+      internalID: 8187304665425999957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 21
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9fff7a6d0803b20800000000000000
+      internalID: 3112129001942940105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 21
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba800b38cd9c734e0800000000000000
+      internalID: -2001909560403556181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 21
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467226d6cc6302c90800000000000000
+      internalID: -7196691952901675164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 2
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404d21d7d5ff92c80800000000000000
+      internalID: -8346859657359076348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 2
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5cf66284cf3e610800000000000000
+      internalID: 1649439275360437684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2037554e06640d9c0800000000000000
+      internalID: -3904543494968610046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bill-bullet-spriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 2
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c363c012af918d900800000000000000
+      internalID: 709345503397819964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: 0, y: 65.5}
+      - {x: -21.353674, y: 59.837227}
+      - {x: -39.015106, y: 43.828053}
+      - {x: -49.93047, y: 20.240612}
+      - {x: -52.212402, y: -6.846617}
+      - {x: -45.46633, y: -32.750004}
+      - {x: -30.858723, y: -52.990616}
+      - {x: -10.9153595, y: -64.06867}
+      - {x: 10.915369, y: -64.068665}
+      - {x: 30.858732, y: -52.99061}
+      - {x: 45.466335, y: -32.749992}
+      - {x: 52.212402, y: -6.8466063}
+      - {x: 49.930466, y: 20.240622}
+      - {x: 39.0151, y: 43.828064}
+      - {x: 21.353666, y: 59.837234}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
