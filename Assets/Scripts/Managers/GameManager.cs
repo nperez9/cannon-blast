@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LoseCondition losingCondition = null;
     [SerializeField] private Bullet bullet = null;
     [SerializeField] private CannonManager cannonManager = null;
+    [SerializeField] private Vector2 startPoint = new Vector2(-10, 0);
 
     private Cannon activeCannon = null;
     private bool isInCannon = false;
@@ -54,6 +55,12 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         Debug.Log("You Loose");
+    }
+
+    public void Win()
+    {
+        Pause();
+        Debug.Log("You Win");
     }
 
     public void CannonCollision(Collision2D collision, Cannon cannon)
