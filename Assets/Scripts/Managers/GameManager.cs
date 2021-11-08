@@ -5,13 +5,15 @@ using Prefabs;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private WinCondition winCondition = null;
     [SerializeField] private LoseCondition losingCondition = null;
     [SerializeField] private Bullet bullet = null;
     [SerializeField] private CannonManager cannonManager = null;
     [SerializeField] private Vector2 startPoint = new Vector2(-10, 0);
-
+    
     private Cannon activeCannon = null;
     private bool isInCannon = false;
+    private bool isLosing = true;
 
     private void Start()
     {
@@ -33,9 +35,13 @@ public class GameManager : MonoBehaviour
             isInCannon = false;
             activeCannon = null;
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !isLosing)
         {
             Pause();
+        }
+        if (Input.GetKeyDown(KeyCode.R) && isLosing)
+        {
+            Retry();
         }
     }
 
@@ -54,13 +60,23 @@ public class GameManager : MonoBehaviour
     }
     public void Lose()
     {
+        Pause();
         Debug.Log("You Loose");
+        bullet.Dead();
+        // TODO: INVOKE UI
     }
 
     public void Win()
     {
         Pause();
         Debug.Log("You Win");
+        // TODO: INVOKE UI
+    }
+
+    private void Retry()
+    {
+        // bullet.Reset()
+
     }
 
     public void CannonCollision(Collision2D collision, Cannon cannon)
