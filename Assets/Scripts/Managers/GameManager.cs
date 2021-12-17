@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 using Prefabs;
+using Constants;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,75 +17,11 @@ public class GameManager : MonoBehaviour
     
     private Cannon activeCannon = null;
     private bool isInCannon = false;
-    private bool isLosing = true;
+    private bool isLose = false;
 
-    private void Start()
+    public void CannonCollision(Collider2D collision, Cannon cannon)
     {
-        SetupElements();
-    }
-
-    private void SetupElements()
-    {
-        losingCondition.SetGameManager(this);
-        cannonManager.SetGameManager(this);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isInCannon)
-        {
-            bullet.Fire(activeCannon.getForce());
-            isInCannon = false;
-            activeCannon = null;
-        }
-        if (Input.GetKeyDown(KeyCode.P) && !isLosing)
-        {
-            Pause();
-        }
-        if (Input.GetKeyDown(KeyCode.R) && isLosing)
-        {
-            Retry();
-        }
-    }
-
-    private void Pause()
-    {
-        if(Time.timeScale != 0)
-        {
-            Time.timeScale = 0;
-            //TODO: SHOW PAUSE
-        }
-        else
-        {
-            Time.timeScale = 1;
-            //TODO: STOP PAUSE
-        }
-    }
-    public void Lose()
-    {
-        Pause();
-        Debug.Log("You Loose");
-        bullet.Dead();
-        // TODO: INVOKE UI
-    }
-
-    public void Win()
-    {
-        Pause();
-        Debug.Log("You Win");
-        // TODO: INVOKE UI
-    }
-
-    private void Retry()
-    {
-        // bullet.Reset()
-
-    }
-
-    public void CannonCollision(Collision2D collision, Cannon cannon)
-    {
-        if (collision.gameObject.CompareTag("Player") && activeCannon != cannon)
+        if (collision.gameObject.CompareTag(Tags.PLAYER) && activeCannon != cannon)
         {
             BoxCollider2D cannonCollider = cannon.gameObject.GetComponent<BoxCollider2D>();
             cannonCollider.enabled = false;
@@ -89,5 +29,87 @@ public class GameManager : MonoBehaviour
             isInCannon = true;
             bullet.SetInCannon(cannon.getFirePoint());
         }
+    }
+    
+    private void Start()
+    {
+        SetupElements();
+    }
+
+    private void SetupElements()
+    {
+        cannonManager.SetGameManager(this);
+        losingCondition.SetGameManager(this);
+        winCondition.SetGameManager(this);
+    }
+
+    void Update()
+    {
+        CheckInputs();
+    }
+
+    private void CheckInputs() {
+        if (Input.GetKeyDown(KeyCode.Space) && isInCannon)
+        {
+            Fire();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.P) && !isLose)
+        {
+            Pause();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R) && isLose)
+        {
+            Retry();
+        }
+    }
+
+    private void Fire() 
+    {
+        isInCannon = false;
+        activeCannon.Explode();
+        bullet.Fire(activeCannon.getForce());
+        activeCannon = null;
+    }
+
+    private void ContinueTime() {
+        Time.timeScale = 0;
+    }
+
+    private void StopTime() {
+        Time.timeScale = 0;
+    }
+
+    private void Pause()
+    {
+        if(Time.timeScale != 0)
+        {
+            ContinueTime();
+        }
+        else
+        {
+            StopTime();
+        }
+    }
+
+    public void Lose()
+    {
+        StopTime();
+        bullet.Dead();
+        isLose = true;
+    }
+
+    public void Win()
+    {
+        StopTime();
+    }
+
+    private void Retry()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        isLose = false;
+        ContinueTime();
     }
 }

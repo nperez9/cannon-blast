@@ -21,7 +21,7 @@ namespace Prefabs {
             this.gameManager = gameManager;
         }
 
-        public void CannonCollision(Collision2D collision, Cannon cannon)
+        public void CannonCollision(Collider2D collision, Cannon cannon)
         {
             gameManager.CannonCollision(collision, cannon);
         }

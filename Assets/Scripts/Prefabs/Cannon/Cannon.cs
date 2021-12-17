@@ -24,6 +24,7 @@ namespace Prefabs {
 
         CannonManager cannonManager = null;
         BoxCollider2D boxCollider = null;
+        Animator animator = null;
 
         public float getForce()
         {
@@ -40,14 +41,16 @@ namespace Prefabs {
             cannonManager = cm;
         }
 
-        public void SetBullet(GameObject bullet)
+        public void Explode() 
         {
-            
+            boxCollider.enabled = false;
+            animator.SetTrigger("explote");
         }
 
         private void Start()
         {
             boxCollider = GetComponent<BoxCollider2D>();
+            animator = GetComponent<Animator>();
         }
 
         void Update()
@@ -122,15 +125,9 @@ namespace Prefabs {
             return nextPosition;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             cannonManager.CannonCollision(collision, this);
-        }
-
-
-        private void OnCollisionExit2D(Collision2D collision)
-        {
-            // boxCollider.enabled = true;            
         }
     }
 }

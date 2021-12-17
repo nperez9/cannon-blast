@@ -24,6 +24,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -376,6 +377,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      enter-barrel-effect_2: -136881202864589450
+      enter-barrel-effect_9: -3137069209462343257
+      enter-barrel-effect_11: 8918545201514246734
+      enter-barrel-effect_5: 8401068042823335590
+      enter-barrel-effect_4: 1314456075215542383
+      enter-barrel-effect_10: -3968509568977755935
+      enter-barrel-effect_12: 3741791054963466640
+      enter-barrel-effect_13: 6369827449307963546
+      enter-barrel-effect_3: 1571845874891602064
+      enter-barrel-effect_1: -6378463583889202540
+      enter-barrel-effect_0: 8680214604670549584
+      enter-barrel-effect_15: 3550232670708914662
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

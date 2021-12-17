@@ -81,6 +81,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -89,7 +90,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -158,6 +159,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -595,6 +608,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      bill-bullet-spriteSheet_11: 8187304665425999957
+      bill-bullet-spriteSheet_9: 7760296331237566496
+      bill-bullet-spriteSheet_15: -8346859657359076348
+      bill-bullet-spriteSheet_10: 8364191018504475647
+      bill-bullet-spriteSheet_18: 709345503397819964
+      bill-bullet-spriteSheet_14: -7196691952901675164
+      bill-bullet-spriteSheet_7: 3636303932821752295
+      bill-bullet-spriteSheet_2: 3355604242794730403
+      bill-bullet-spriteSheet_3: -9219127993194652422
+      bill-bullet-spriteSheet_13: -2001909560403556181
+      bill-bullet-spriteSheet_8: -7755457721892191048
+      bill-bullet-spriteSheet_1: -8661358496189604965
+      bill-bullet-spriteSheet_0: -3143754358163529157
+      bill-bullet-spriteSheet_6: -6937397760178771730
+      bill-bullet-spriteSheet_12: 3112129001942940105
+      bill-bullet-spriteSheet_16: 1649439275360437684
+      bill-bullet-spriteSheet_4: -7272599502957403442
+      bill-bullet-spriteSheet_5: 1833936528807261628
+      bill-bullet-spriteSheet_17: -3904543494968610046
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
