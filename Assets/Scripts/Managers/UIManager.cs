@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Image backgroundImage = null;
+    private Text text = null;
+
+    void Awake()
+    {
+        backgroundImage = GetComponentInChildren<Image>();
+        text = GetComponentInChildren<Text>();
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    public void ShowMessage(string text) {
+        ShowMessageElements();
+        this.text.text = text;
+    }
+
+    private void ShowMessageElements() {
+        backgroundImage.enabled = true;
+        text.enabled = true;
+    }
+
+    public void ShowMessageElements() {
+        backgroundImage.enabled = true;
+        text.enabled = true;
+    }
+
+    public void RemoveMesssage() {
         
     }
 }
