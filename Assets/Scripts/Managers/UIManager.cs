@@ -3,39 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class UIManager : MonoBehaviour
+namespace Managers
 {
-    private Image backgroundImage = null;
-    private Text text = null;
-
-    void Awake()
+    public class UIManager : MonoBehaviour
     {
-        backgroundImage = GetComponentInChildren<Image>();
-        text = GetComponentInChildren<Text>();
-    }
+        private Image backgroundImage = null;
+        private Text text = null;
 
-    void Update()
-    {
-        
-    }
+        void Awake()
+        {
+            backgroundImage = GetComponentInChildren<Image>();
+            text = GetComponentInChildren<Text>();
+        }
 
-    public void ShowMessage(string text) {
-        ShowMessageElements();
-        this.text.text = text;
-    }
+        public void ShowMessage(string text) {
+            ShowMessageElements();
+            this.text.text = text;
+        }
 
-    private void ShowMessageElements() {
-        backgroundImage.enabled = true;
-        text.enabled = true;
-    }
+        public void HideMessage() 
+        {
+            this.text.text = "";
+            HideMessageElements();
+        }
 
-    public void ShowMessageElements() {
-        backgroundImage.enabled = true;
-        text.enabled = true;
-    }
+        private void ShowMessageElements() {
+            backgroundImage.enabled = true;
+            text.enabled = true;
+        }
 
-    public void RemoveMesssage() {
-        
+        private void HideMessageElements() {
+            backgroundImage.enabled = false;
+            text.enabled = false;
+        }
     }
 }

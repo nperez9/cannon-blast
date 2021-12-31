@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 using Prefabs;
 using Constants;
+using Managers;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class GameManager : MonoBehaviour
     private Cannon activeCannon = null;
     private bool isInCannon = false;
     private bool isLose = false;
+    private bool isPause = false;
+    private UIManager uiManager = null;
+
+    private void Awake() 
+    {
+        uiManager = GetComponentInChildren<UIManager>();
+    }
 
     public void CannonCollision(Collider2D collision, Cannon cannon)
     {
@@ -48,8 +56,9 @@ public class GameManager : MonoBehaviour
         CheckInputs();
     }
 
-    private void CheckInputs() {
-        if (Input.GetKeyDown(KeyCode.Space) && isInCannon)
+    private void CheckInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isInCannon && !isPause)
         {
             Fire();
         }
@@ -73,29 +82,38 @@ public class GameManager : MonoBehaviour
         activeCannon = null;
     }
 
-    private void ContinueTime() {
-        Time.timeScale = 0;
+    private void ContinueTime()
+    {
+        Time.timeScale = 1;
     }
 
-    private void StopTime() {
+    private void StopTime() 
+    {
         Time.timeScale = 0;
     }
 
     private void Pause()
     {
-        if(Time.timeScale != 0)
+        Debug.Log(Time.timeScale);
+        Debug.Log("PAUSA");
+        if(Time.timeScale == 0)
         {
+            isPause = false;
+            uiManager.HideMessage();
             ContinueTime();
         }
         else
         {
             StopTime();
+            isPause = true;
+            uiManager.ShowMessage("Pause - Press P to continue");
         }
     }
 
     public void Lose()
     {
         StopTime();
+        uiManager.ShowMessage("Lose - Press R to Restart");
         bullet.Dead();
         isLose = true;
     }
