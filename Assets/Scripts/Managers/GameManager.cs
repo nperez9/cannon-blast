@@ -94,8 +94,6 @@ public class GameManager : MonoBehaviour
 
     private void Pause()
     {
-        Debug.Log(Time.timeScale);
-        Debug.Log("PAUSA");
         if(Time.timeScale == 0)
         {
             isPause = false;
@@ -106,14 +104,14 @@ public class GameManager : MonoBehaviour
         {
             StopTime();
             isPause = true;
-            uiManager.ShowMessage("Pause - Press P to continue");
+            uiManager.ShowMessage("Pause", "Press P to continue");
         }
     }
 
     public void Lose()
     {
         StopTime();
-        uiManager.ShowMessage("Lose - Press R to Restart");
+        uiManager.ShowMessage("Lose", "Press R to Restart");
         bullet.Dead();
         isLose = true;
     }
@@ -121,6 +119,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         StopTime();
+        uiManager.ShowMessage("You Win!!!");
     }
 
     private void Retry()

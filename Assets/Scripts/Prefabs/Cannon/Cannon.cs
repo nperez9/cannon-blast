@@ -44,6 +44,7 @@ namespace Prefabs {
         public void Explode() 
         {
             boxCollider.enabled = false;
+            isStatic = true;
             animator.SetTrigger("explote");
         }
 
