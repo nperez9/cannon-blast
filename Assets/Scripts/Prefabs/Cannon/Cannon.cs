@@ -21,6 +21,8 @@ namespace Prefabs {
         [SerializeField] Vector2 moveFrom = new Vector2(0, 0);
         [SerializeField] Vector2 moveTo = new Vector2(0, 0);
         [SerializeField] Transform firePoint = null;
+        // Default shoot direction
+        [SerializeField] Vector2 shotDirection = Vector2.up;
 
         CannonManager cannonManager = null;
         BoxCollider2D boxCollider = null;
@@ -29,6 +31,11 @@ namespace Prefabs {
         public float getForce()
         {
             return force;
+        }
+
+        public Vector2 getShotDirection()
+        {
+            return shotDirection;
         }
 
         public Transform getFirePoint()

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Constants;
+
 public class LoseCondition : MonoBehaviour
 {
     private GameManager gameManager = null;
@@ -19,6 +21,9 @@ public class LoseCondition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameManager.Lose();
+        if (collision.gameObject.CompareTag(Tags.PLAYER))
+        {
+            gameManager.Lose();
+        }            
     }
 }

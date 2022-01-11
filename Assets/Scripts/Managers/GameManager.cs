@@ -15,16 +15,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Bullet bullet = null;
     [SerializeField] private CannonManager cannonManager = null;
     [SerializeField] private Vector2 startPoint = new Vector2(-10, 0);
-    
+
+    // TODO: do a refactor on sounds
+    [SerializeField] private AudioClip blastSound = null;
+    [SerializeField] private AudioClip destroyCannonSound = null;
+    [SerializeField] private AudioClip pauseSound = null;
+    [SerializeField] private AudioClip winSound = null;
+
     private Cannon activeCannon = null;
     private bool isInCannon = false;
     private bool isLose = false;
     private bool isPause = false;
+    private bool isWin = false;
     private UIManager uiManager = null;
+    private SfxManager sfxManager = null;
 
     private void Awake() 
     {
         uiManager = GetComponentInChildren<UIManager>();
+        sfxManager = GetComponentInChildren<SfxManager>();
     }
 
     public void CannonCollision(Collider2D collision, Cannon cannon)
@@ -58,12 +67,16 @@ public class GameManager : MonoBehaviour
 
     private void CheckInputs()
     {
+        if(Input.GetKeyDown(KeyCode.Space) && isWin)
+        {
+            Won();
+        }
         if (Input.GetKeyDown(KeyCode.Space) && isInCannon && !isPause)
         {
             Fire();
         }
         
-        if (Input.GetKeyDown(KeyCode.P) && !isLose)
+        if (Input.GetKeyDown(KeyCode.P) && !isLose && !isWin)
         {
             Pause();
         }
@@ -78,8 +91,17 @@ public class GameManager : MonoBehaviour
     {
         isInCannon = false;
         activeCannon.Explode();
-        bullet.Fire(activeCannon.getForce());
+        sfxManager.PlaySound(destroyCannonSound);
+
+        bullet.Fire(activeCannon.getShotDirection(), activeCannon.getForce());
+        sfxManager.PlaySound(blastSound);
         activeCannon = null;
+    }
+
+    private void Won()
+    {
+        ContinueTime();
+        SceneManager.LoadScene("MenuStart");
     }
 
     private void ContinueTime()
@@ -105,6 +127,7 @@ public class GameManager : MonoBehaviour
             StopTime();
             isPause = true;
             uiManager.ShowMessage("Pause", "Press P to continue");
+            sfxManager.PlaySound(pauseSound);
         }
     }
 
@@ -119,7 +142,9 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         StopTime();
-        uiManager.ShowMessage("You Win!!!");
+        uiManager.ShowMessage("You Win!!!", "Press SpaceBar to return to the menu");
+        isWin = true;
+        sfxManager.PlaySound(winSound);
     }
 
     private void Retry()
