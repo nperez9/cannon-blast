@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && isWin)
         {
-            Won();
+            NextLevel();
         }
         if (Input.GetKeyDown(KeyCode.Space) && isInCannon && !isPause)
         {
@@ -153,5 +153,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene.name);
         isLose = false;
         ContinueTime();
+    }
+
+    private void NextLevel()
+    {
+        string name = SceneManager.GetActiveScene().name;
+        string[] aux = name.Split("level");
+
+        int nextLevel = int.Parse(aux[1]) + 1;
+        Scene scene = SceneManager.GetSceneByName("level" + nextLevel.ToString());
+        SceneManager.LoadScene(scene.name);
     }
 }

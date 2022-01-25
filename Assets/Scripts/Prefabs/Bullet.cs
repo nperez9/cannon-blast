@@ -9,14 +9,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] GameObject spriteReference = null;
 
     private Rigidbody2D rb = null;
-    private BoxCollider2D boxCollider = null;
+    private CircleCollider2D circleCollider = null;
     private SpriteRenderer spriteR = null;
     private Transform spriteTransform = null;
    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        circleCollider = GetComponent<CircleCollider2D>();
         spriteR = spriteReference.GetComponent<SpriteRenderer>();
         spriteTransform = spriteReference.GetComponent<Transform>();
     }
@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
     {
         transform.SetParent(null);
         rb.bodyType = RigidbodyType2D.Dynamic;
-        boxCollider.enabled = true;
+        circleCollider.enabled = true;
         rb.AddForce(direction * force * baseForce, ForceMode2D.Impulse);
     }
 
