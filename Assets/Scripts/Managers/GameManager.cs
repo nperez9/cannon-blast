@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && isWin)
         {
-            NextLevel();
+            Won();
         }
         if (Input.GetKeyDown(KeyCode.Space) && isInCannon && !isPause)
         {
