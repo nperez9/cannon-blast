@@ -30,12 +30,6 @@ public class GameManager : MonoBehaviour
     private UIManager uiManager = null;
     private SfxManager sfxManager = null;
 
-    private void Awake() 
-    {
-        uiManager = GetComponentInChildren<UIManager>();
-        sfxManager = GetComponentInChildren<SfxManager>();
-    }
-
     public void CannonCollision(Collider2D collision, Cannon cannon)
     {
         if (collision.gameObject.CompareTag(Tags.PLAYER) && activeCannon != cannon)
@@ -47,7 +41,13 @@ public class GameManager : MonoBehaviour
             bullet.SetInCannon(cannon.getFirePoint());
         }
     }
-    
+
+    private void Awake()
+    {
+        uiManager = GetComponentInChildren<UIManager>();
+        sfxManager = GetComponentInChildren<SfxManager>();
+    }
+
     private void Start()
     {
         SetupElements();
