@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 using Constants;
 
-public class Item : MonoBehaviour
+public class Collectable : MonoBehaviour
 {
+    public event Action<int> GrabItem;
+
     [SerializeField] private int itemIndex = 1;
 
     private void OnTriggerEnter2D(Collider2D collider)

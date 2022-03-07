@@ -24,6 +24,16 @@ namespace Managers
             HideMessage();
         }
 
+        public void SetupCollectables(Collectable[] collectables)
+        {
+
+        }
+
+        public void GrabCollectable(int itemIndex)
+        {
+
+        }
+
         public void ShowMessage(string title, string description = "") {
             ShowMessageElements();
             this.title.text = title;
