@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -24,17 +22,8 @@ namespace Managers
             HideMessage();
         }
 
-        public void SetupCollectables(Collectable[] collectables)
+        public void ShowMessage(string title, string description = "") 
         {
-
-        }
-
-        public void GrabCollectable(int itemIndex)
-        {
-
-        }
-
-        public void ShowMessage(string title, string description = "") {
             ShowMessageElements();
             this.title.text = title;
             this.description.text = description;

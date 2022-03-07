@@ -13,7 +13,7 @@ public class Collectable : MonoBehaviour
     {
         if (collider.gameObject.CompareTag(Tags.PLAYER))
         {
-            Debug.Log("test");
+            GrabItem(itemIndex);
         }
     }
 }

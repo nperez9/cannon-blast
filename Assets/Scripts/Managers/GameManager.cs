@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private bool isWin = false;
     private UIManager uiManager = null;
     private SfxManager sfxManager = null;
+    private UIGamePlayManager uiGameplayManager = null;
     private Collectable[] collectables;
 
     public void CannonCollision(Collider2D collision, Cannon cannon)
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         uiManager = GetComponentInChildren<UIManager>();
         sfxManager = GetComponentInChildren<SfxManager>();
+        uiGameplayManager = GetComponentInChildren<UIGamePlayManager>();
     }
 
     private void Start()
@@ -82,13 +84,15 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < collectables.Length; i++)
         {
             collectables[i].GrabItem += GrabItem;
+            collectables[i].gameObject.SetActive(true);
         }
-        uiManager.SetupCollectables(collectables);
+        uiGameplayManager.SetupCollectables(collectables);
     }
 
     private void GrabItem(int collectibleIndex)
     {
-
+        collectables[collectibleIndex].gameObject.SetActive(false);
+        uiGameplayManager.GrabCollectable(collectibleIndex);
     }
 
     void Update()
@@ -116,11 +120,6 @@ public class GameManager : MonoBehaviour
         {
             Retry();
         }
-    }
-
-    private void AddedItem(int collectableIndex)
-    {
-
     }
 
     private void Fire() 
