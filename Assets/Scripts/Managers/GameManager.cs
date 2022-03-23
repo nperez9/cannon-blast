@@ -8,13 +8,14 @@ using Prefabs;
 using Constants;
 using Managers;
 
+public enum GameStates { GamePlay, Menu, Win, Lose };
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private WinCondition winCondition = null;
     [SerializeField] private LoseCondition losingCondition = null;
     [SerializeField] private Bullet bullet = null;
     [SerializeField] private CannonManager cannonManager = null;
-    // [SerializeField] private Vector2 startPoint = new Vector2(-10, 0);
 
     // TODO: do a refactor on sounds
     [SerializeField] private AudioClip blastSound = null;
@@ -22,8 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip pauseSound = null;
     [SerializeField] private AudioClip winSound = null;
 
-
-
+    private GameStates gameState = GameStates.GamePlay;
     private Cannon activeCannon = null;
     private bool isInCannon = false;
     private bool isLose = false;
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         uiGameplayManager = GetComponentInChildren<UIGamePlayManager>();
     }
 
-    private void Start()
+        private void Start()
     {
         cannonManager.SetGameManager(this);
         losingCondition.SetGameManager(this);
