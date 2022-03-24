@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +5,7 @@ using Prefabs;
 using Constants;
 using Managers;
 
-public enum GameStates { GamePlay, Menu, Win, Lose };
+public enum GameStates { GamePlay, Menu, Win, Lose, Pause };
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LoseCondition losingCondition = null;
     [SerializeField] private Bullet bullet = null;
     [SerializeField] private CannonManager cannonManager = null;
+    [SerializeField] private MenuManager menuManager = null;
 
     // TODO: do a refactor on sounds
     [SerializeField] private AudioClip blastSound = null;
@@ -27,9 +25,8 @@ public class GameManager : MonoBehaviour
     private Cannon activeCannon = null;
     private bool isInCannon = false;
     private bool isLose = false;
-    private bool isPause = false;
     private bool isWin = false;
-    private UIManager uiManager = null;
+    
     private SfxManager sfxManager = null;
     private UIGamePlayManager uiGameplayManager = null;
     private Collectable[] collectables;
@@ -48,28 +45,29 @@ public class GameManager : MonoBehaviour
 
     public void Lose()
     {
+        gameState = GameStates.Lose;
         StopTime();
-        uiManager.ShowMessage("Lose", "Press R to Restart");
+        // uiManager.ShowMessage("Lose", "Press R to Restart");
         bullet.Dead();
         isLose = true;
     }
 
     public void Win()
     {
+        gameState = GameStates.Win;
         StopTime();
-        uiManager.ShowMessage("You Win!!!", "Press SpaceBar to return to the menu");
+        // uiManager.ShowMessage("You Win!!!", "Press SpaceBar to return to the menu");
         isWin = true;
         sfxManager.PlaySound(winSound);
     }
 
     private void Awake()
     {
-        uiManager = GetComponentInChildren<UIManager>();
         sfxManager = GetComponentInChildren<SfxManager>();
         uiGameplayManager = GetComponentInChildren<UIGamePlayManager>();
     }
 
-        private void Start()
+    private void Start()
     {
         cannonManager.SetGameManager(this);
         losingCondition.SetGameManager(this);
@@ -106,16 +104,14 @@ public class GameManager : MonoBehaviour
         {
             Won();
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isInCannon && !isPause)
+        if (Input.GetKeyDown(KeyCode.Space) && gameState == GameStates.GamePlay && isInCannon)
         {
             Fire();
         }
-        
-        if (Input.GetKeyDown(KeyCode.P) && !isLose && !isWin)
+        if (Input.GetKeyDown(KeyCode.P) && (gameState == GameStates.GamePlay || gameState == GameStates.Pause))
         {
             Pause();
         }
-        
         if (Input.GetKeyDown(KeyCode.R) && isLose)
         {
             Retry();
@@ -149,24 +145,24 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    private void Pause()
+    public void Pause()
     {
-        if(Time.timeScale == 0)
+        if(gameState == GameStates.GamePlay)
         {
-            isPause = false;
-            uiManager.HideMessage();
-            ContinueTime();
+            StopTime();
+            gameState = GameStates.Pause;
+            menuManager.PauseMenu();
+            sfxManager.PlaySound(pauseSound);
         }
         else
         {
-            StopTime();
-            isPause = true;
-            uiManager.ShowMessage("Pause", "Press P to continue");
-            sfxManager.PlaySound(pauseSound);
+            gameState = GameStates.GamePlay;
+            menuManager.Hide();
+            ContinueTime();
         }
     }
 
-    private void Retry()
+    public void Retry()
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);

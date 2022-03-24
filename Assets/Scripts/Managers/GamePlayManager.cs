@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class GamePlayManager : MonoBehaviour
-{
-    void Start()
+namespace Managers
+{   
+    public class GamePlayManager : MonoBehaviour
     {
-        
-    }
+        public void HandleUpdate()
+        {
 
-    void Update()
-    {
-        
+        }
     }
 }
