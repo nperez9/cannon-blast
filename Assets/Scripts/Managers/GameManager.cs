@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour
 
     private void SetupCollectables()
     {    
-        // SetupCollectables 
         collectables = GetComponentsInChildren<Collectable>();
         for (int i = 0; i < collectables.Length; i++)
         {
@@ -96,11 +95,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckInputs();
+        if (gameState == GameStates.Lose || gameState == GameStates.Pause || gameState == GameStates.Win)
+        {
+            menuManager.HandleUpdate();
+        }
     }
 
     private void CheckInputs()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isWin)
+        if(Input.GetKeyDown(KeyCode.Space) && gameState == GameStates.Win)
         {
             Won();
         }
@@ -112,7 +115,7 @@ public class GameManager : MonoBehaviour
         {
             Pause();
         }
-        if (Input.GetKeyDown(KeyCode.R) && isLose)
+        if (Input.GetKeyDown(KeyCode.R) && gameState == GameStates.Lose)
         {
             Retry();
         }

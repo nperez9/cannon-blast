@@ -1950,7 +1950,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1967,7 +1967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseTitle: PAUSE
-  pauseSubtitle: 
+  pauseSubtitle: Or press P to continue
   loseTitle: YOU LOSE
   loseSubtitle: Choose an option
   wonTitle: YOU WON!!!!
@@ -2329,10 +2329,22 @@ PrefabInstance:
     - target: {fileID: 2075912863899296190, guid: 4b4b49aa0022fac47b3de25d82ee42c9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 137056424}
+      objectReference: {fileID: 1015093113}
     - target: {fileID: 2075912863899296190, guid: 4b4b49aa0022fac47b3de25d82ee42c9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075912863899296190, guid: 4b4b49aa0022fac47b3de25d82ee42c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075912863899296190, guid: 4b4b49aa0022fac47b3de25d82ee42c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Managers.MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075912863899296190, guid: 4b4b49aa0022fac47b3de25d82ee42c9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2075912863899296191, guid: 4b4b49aa0022fac47b3de25d82ee42c9, type: 3}
       propertyPath: m_Pivot.x
