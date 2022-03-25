@@ -80,8 +80,7 @@ namespace Managers {
 
         public void BackToMenu()
         {
-            Scene scene = SceneManager.GetSceneByName("MenuStart");
-            SceneManager.LoadScene(scene.name);
+            SceneManager.LoadScene("MenuStart");
         }
 
         public void Hide()

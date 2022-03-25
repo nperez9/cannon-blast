@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
     private GameStates gameState = GameStates.GamePlay;
     private Cannon activeCannon = null;
     private bool isInCannon = false;
-    private bool isLose = false;
-    private bool isWin = false;
     
     private SfxManager sfxManager = null;
     private UIGamePlayManager uiGameplayManager = null;
@@ -47,18 +45,16 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameStates.Lose;
         StopTime();
-        // uiManager.ShowMessage("Lose", "Press R to Restart");
         bullet.Dead();
-        isLose = true;
+        menuManager.LoseMenu();
     }
 
     public void Win()
     {
         gameState = GameStates.Win;
         StopTime();
-        // uiManager.ShowMessage("You Win!!!", "Press SpaceBar to return to the menu");
-        isWin = true;
         sfxManager.PlaySound(winSound);
+        menuManager.WonMenu();
     }
 
     private void Awake()
@@ -73,6 +69,8 @@ public class GameManager : MonoBehaviour
         losingCondition.SetGameManager(this);
         winCondition.SetGameManager(this);
         SetupCollectables();
+        // for if you lose/win and go back to menu
+        ContinueTime();
     }
 
     private void SetupCollectables()
@@ -169,17 +167,17 @@ public class GameManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        isLose = false;
+        gameState = GameStates.GamePlay;
+        menuManager.Hide();
         ContinueTime();
     }
 
-    private void NextLevel()
+    public void NextLevel()
     {
         string name = SceneManager.GetActiveScene().name;
         string[] aux = name.Split("level");
 
         int nextLevel = int.Parse(aux[1]) + 1;
-        Scene scene = SceneManager.GetSceneByName("level" + nextLevel.ToString());
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(nextLevel);
     }
 }

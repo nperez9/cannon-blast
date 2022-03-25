@@ -5,6 +5,12 @@ using UnityEngine;
 namespace Managers { 
     public class SfxManager : MonoBehaviour
     {
+        [SerializeField] private AudioClip blastSound = null;
+        [SerializeField] private AudioClip destroyCannonSound = null;
+        [SerializeField] private AudioClip pauseSound = null;
+        [SerializeField] private AudioClip winSound = null;
+        [SerializeField] private AudioClip grabItem = null;
+
         private AudioSource sfxSource = null;
 
         private void Awake()
