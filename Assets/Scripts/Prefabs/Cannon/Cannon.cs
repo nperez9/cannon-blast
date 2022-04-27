@@ -21,6 +21,9 @@ namespace Prefabs {
         [SerializeField] Vector2 moveFrom = new Vector2(0, 0);
         [SerializeField] Vector2 moveTo = new Vector2(0, 0);
         [SerializeField] Transform firePoint = null;
+
+        [SerializeField] bool isRotate = false;
+        [SerializeField] float rotateSpeed = 1.0;
         // Default shoot direction
         [SerializeField] Vector2 shotDirection = Vector2.up;
 
@@ -69,11 +72,22 @@ namespace Prefabs {
             }
 
             MoveCannon();
-            // RotateCannon();
+
+            if (isRotate)
+            {
+                RotateCannon();
+            }
+        }
+
+        private void RotateCannon()
+        {
+            Quaternion newRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+            newRotation.z += rotateSpeed;
+            // transform.rotation = Quaternio
         }
 
 
-        void MoveCannon()
+        private void MoveCannon()
         {
             Vector3 nextMovement = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             
@@ -92,7 +106,7 @@ namespace Prefabs {
         /**
          * Moves the cannon in X
          */
-        float MoveInX(float from, float to)
+        private float MoveInX(float from, float to)
         {
             float deltaSpeed = speedX * Time.deltaTime * dirX;
             float nextPosition = transform.position.x + deltaSpeed;
@@ -114,7 +128,7 @@ namespace Prefabs {
         /** 
          * Moves cannon en Y
          */
-        float MoveInY(float from, float to)
+        private float MoveInY(float from, float to)
         {
             float deltaSpeed = speedY * Time.deltaTime * dirY;
             float nextPosition = transform.position.y + deltaSpeed;
@@ -133,7 +147,7 @@ namespace Prefabs {
             return nextPosition;
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D collision)
         {
             cannonManager.CannonCollision(collision, this);
         }
