@@ -24,6 +24,7 @@ namespace Prefabs {
 
         [SerializeField] bool isRotate = false;
         [SerializeField] float rotateSpeed = 1.0f;
+        [SerializeField] int rotateDirection = 1;
         // Default shoot direction
         [SerializeField] Vector2 shotDirection = Vector2.up;
 
@@ -75,18 +76,18 @@ namespace Prefabs {
 
             if (isRotate)
             {
-                Debug.Log("rotationnn");
-                RotateCannon();
+                RotateCannon2();
             }
         }
 
-        private void RotateCannon()
+        private void RotateCannon2()
         {
-            Quaternion newRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-            newRotation.z += rotateSpeed;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, newRotation, speed * Time.deltaTime);
-        }
+            float newRotation = transform.rotation.eulerAngles.z;
+            newRotation = newRotation + rotateSpeed * rotateDirection;
 
+            Quaternion targetPositon = Quaternion.Euler(transform.rotation.x, transform.rotation.y, newRotation);
+            transform.rotation = targetPositon;
+        }
 
         private void MoveCannon()
         {

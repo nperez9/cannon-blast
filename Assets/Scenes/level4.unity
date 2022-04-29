@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902049353308695115, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2902049353308695115, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_LocalRotation.x
@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902049353308695115, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2902049353308695115, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -336,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2902049353308695115, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2902049353308695117, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_Name
@@ -360,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: isRotate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: moveTo.x
@@ -372,7 +372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: rotateSpeed
-      value: 200
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
+      propertyPath: rotateDirection
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: shotDirection.x
@@ -1496,7 +1500,7 @@ PrefabInstance:
     - target: {fileID: 7946487710608804525, guid: 086e457221fd4834ca8efe08ca7ac474, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 39d029916f46f54408a0169eaf091fd3, type: 3}
+      objectReference: {fileID: 21300000, guid: 1529a4820853b3f4fb2d45b17e0809f2, type: 3}
     - target: {fileID: 7946487710608804525, guid: 086e457221fd4834ca8efe08ca7ac474, type: 3}
       propertyPath: m_Enabled
       value: 1
