@@ -23,7 +23,7 @@ namespace Prefabs {
         [SerializeField] Transform firePoint = null;
 
         [SerializeField] bool isRotate = false;
-        [SerializeField] float rotateSpeed = 1.0;
+        [SerializeField] float rotateSpeed = 1.0f;
         // Default shoot direction
         [SerializeField] Vector2 shotDirection = Vector2.up;
 
@@ -75,6 +75,7 @@ namespace Prefabs {
 
             if (isRotate)
             {
+                Debug.Log("rotationnn");
                 RotateCannon();
             }
         }
@@ -83,7 +84,7 @@ namespace Prefabs {
         {
             Quaternion newRotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
             newRotation.z += rotateSpeed;
-            // transform.rotation = Quaternio
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, newRotation, speed * Time.deltaTime);
         }
 
 

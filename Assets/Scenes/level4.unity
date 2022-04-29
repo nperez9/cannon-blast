@@ -359,12 +359,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
+      propertyPath: isRotate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: moveTo.x
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: moveFrom.x
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
+      propertyPath: rotateSpeed
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: shotDirection.x
@@ -962,7 +970,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2902049353308695115, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2902049353308695115, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1374,6 +1382,10 @@ PrefabInstance:
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: moveInY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
+      propertyPath: isRotate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: isStatic
