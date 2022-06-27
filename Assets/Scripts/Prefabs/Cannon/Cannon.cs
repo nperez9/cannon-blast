@@ -21,6 +21,7 @@ namespace Prefabs {
         [SerializeField] Vector2 moveFrom = new Vector2(0, 0);
         [SerializeField] Vector2 moveTo = new Vector2(0, 0);
         [SerializeField] Transform firePoint = null;
+        [SerializeField] Transform shotPoint = null;
 
         [SerializeField] bool isRotate = false;
         [SerializeField] float rotateSpeed = 1.0f;
@@ -37,9 +38,15 @@ namespace Prefabs {
             return force;
         }
 
+        /**
+         * Returns the direction where the bullet is gonna be fired.
+         * it's in base of the Shotpoint GO position
+         */
         public Vector2 getShotDirection()
         {
-            return shotDirection;
+            // TODO: mmabye add an opposite fire cannon (the inverted cannon)
+            Vector2 newDir = shotPoint.position - transform.position;
+            return newDir.normalized;
         }
 
         public Transform getFirePoint()
@@ -59,7 +66,7 @@ namespace Prefabs {
             animator.SetTrigger("explote");
         }
 
-        private void Start()
+        private void Awake()
         {
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();
