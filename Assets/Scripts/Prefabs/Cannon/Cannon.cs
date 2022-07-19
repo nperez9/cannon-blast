@@ -26,8 +26,6 @@ namespace Prefabs {
         [SerializeField] bool isRotate = false;
         [SerializeField] float rotateSpeed = 1.0f;
         [SerializeField] int rotateDirection = 1;
-        // Default shoot direction
-        [SerializeField] Vector2 shotDirection = Vector2.up;
 
         CannonManager cannonManager = null;
         BoxCollider2D boxCollider = null;
@@ -45,7 +43,7 @@ namespace Prefabs {
         public Vector2 getShotDirection()
         {
             // TODO: mmabye add an opposite fire cannon (the inverted cannon)
-            Vector2 newDir = shotPoint.position - transform.position;
+            Vector2 newDir = shotPoint.position - firePoint.position;
             return newDir.normalized;
         }
 
@@ -83,11 +81,11 @@ namespace Prefabs {
 
             if (isRotate)
             {
-                RotateCannon2();
+                RotateCannon();
             }
         }
 
-        private void RotateCannon2()
+        private void RotateCannon()
         {
             float newRotation = transform.rotation.eulerAngles.z;
             newRotation = newRotation + rotateSpeed * rotateDirection;
@@ -135,7 +133,7 @@ namespace Prefabs {
         }
 
         /** 
-         * Moves cannon en Y
+         * Moves cannon in Y
          */
         private float MoveInY(float from, float to)
         {

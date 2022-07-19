@@ -1369,7 +1369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: force
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5624191894635689062, guid: 869dd2a78700c94429ad1d231d630949, type: 3}
       propertyPath: moveInY
