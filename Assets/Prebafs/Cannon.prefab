@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2902049353308695115}
   - component: {fileID: 5624191894635689062}
   - component: {fileID: -9176531834267840093}
-  - component: {fileID: 6597162722825495094}
+  - component: {fileID: 877808667779545294}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Cannon
@@ -66,7 +66,7 @@ MonoBehaviour:
   isRotate: 0
   rotateSpeed: 1
   rotateDirection: 1
-  shotDirection: {x: 0, y: 1}
+  topCannon: {fileID: 0}
 --- !u!61 &-9176531834267840093
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.4}
   m_EdgeRadius: 0
---- !u!95 &6597162722825495094
+--- !u!95 &877808667779545294
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

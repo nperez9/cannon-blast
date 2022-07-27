@@ -26,6 +26,7 @@ namespace Prefabs {
         [SerializeField] bool isRotate = false;
         [SerializeField] float rotateSpeed = 1.0f;
         [SerializeField] int rotateDirection = 1;
+        [SerializeField] SpriteRenderer topCannon = null;
 
         CannonManager cannonManager = null;
         BoxCollider2D boxCollider = null;
@@ -61,7 +62,7 @@ namespace Prefabs {
         {
             boxCollider.enabled = false;
             isStatic = true;
-            animator.SetTrigger("explote");
+            animator.SetBool("explote", true);
         }
 
         private void Awake()
