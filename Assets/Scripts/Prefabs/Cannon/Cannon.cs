@@ -26,6 +26,8 @@ namespace Prefabs {
         [SerializeField] bool isRotate = false;
         [SerializeField] float rotateSpeed = 1.0f;
         [SerializeField] int rotateDirection = 1;
+        [SerializeField] float fromRotation = 0;
+        [SerializeField] float toRotation = 370;
         [SerializeField] SpriteRenderer topCannon = null;
 
         CannonManager cannonManager = null;
@@ -90,6 +92,17 @@ namespace Prefabs {
         {
             float newRotation = transform.rotation.eulerAngles.z;
             newRotation = newRotation + rotateSpeed * rotateDirection;
+
+            if (newRotation > toRotation)
+            {
+                newRotation = toRotation;
+                rotateDirection = -1;
+            } 
+            else if (newRotation < fromRotation)
+            {
+                newRotation = fromRotation;
+                rotateDirection = 1;
+            }
 
             Quaternion targetPositon = Quaternion.Euler(transform.rotation.x, transform.rotation.y, newRotation);
             transform.rotation = targetPositon;

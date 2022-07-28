@@ -66,6 +66,8 @@ MonoBehaviour:
   isRotate: 0
   rotateSpeed: 1
   rotateDirection: 1
+  fromRotation: 0
+  toRotation: 370
   topCannon: {fileID: 0}
 --- !u!61 &-9176531834267840093
 BoxCollider2D:
