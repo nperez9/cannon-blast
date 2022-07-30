@@ -10,9 +10,16 @@ namespace Managers {
 
         public void SetupCollectables(Collectable[] collectables)
         {
-            for (int i = 0; i < collectables.Length; i++)
+            try { 
+                for (int i = 0; i < collectables.Length; i++)
+                {
+                    collectibles[i].ActivateCollectable();
+                }
+            } 
+            catch
             {
-                collectibles[i].ActivateCollectable();
+                Debug.Log(collectables);
+                Debug.Log(collectibles);
             }
         }
 

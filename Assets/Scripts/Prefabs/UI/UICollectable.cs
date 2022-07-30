@@ -17,6 +17,11 @@ namespace Prefabs.UI
 
         public void ActivateCollectable()
         {
+            // TODO: This is a villereada, fix with other way
+            if (!image)
+            {
+                image = GetComponent<Image>();
+            }
             image.enabled = true;
             image.color = uncollectedColor;
         }
