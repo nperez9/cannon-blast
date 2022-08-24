@@ -5,11 +5,12 @@ using UnityEngine;
 namespace Managers { 
     public class SfxManager : MonoBehaviour
     {
-        [SerializeField] private AudioClip blastSound = null;
-        [SerializeField] private AudioClip destroyCannonSound = null;
-        [SerializeField] private AudioClip pauseSound = null;
-        [SerializeField] private AudioClip winSound = null;
-        [SerializeField] private AudioClip grabItem = null;
+        [SerializeField] private AudioClip blastSFX = null;
+        [SerializeField] private AudioClip destroyCannonSFX = null;
+        [SerializeField] private AudioClip pauseSFX = null;
+        [SerializeField] private AudioClip winSFX = null;
+        [SerializeField] private AudioClip getColletableSFX = null;
+        [SerializeField] private AudioClip loseSFX = null;
 
         private AudioSource sfxSource = null;
 
@@ -28,6 +29,36 @@ namespace Managers {
             {
                 Debug.LogError("error loading SFX: " + clip.name);
             }
+        }
+
+        public void blastSfx()
+        {
+            sfxSource.PlayOneShot(blastSFX);
+        }
+
+        public void DestroyCannonSfx()
+        {
+            sfxSource.PlayOneShot(destroyCannonSFX);
+        }
+    
+        public void GetCollectableSfx()
+        {
+            sfxSource.PlayOneShot(getColletableSFX);
+        }
+
+        public void PauseSfx()
+        {
+            sfxSource.PlayOneShot(pauseSFX);
+        }
+
+        public void WinSfx()
+        {
+            sfxSource.PlayOneShot(winSFX);
+        }
+
+        public void LooseSfx()
+        {
+            sfxSource.PlayOneShot(loseSFX);
         }
     }
 }
