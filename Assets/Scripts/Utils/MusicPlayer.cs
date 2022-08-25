@@ -1,19 +1,31 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MusicPlayer : MonoBehaviour
-{
-    
-    static MusicPlayer instance = null;
-    static string sceneName = "";
-
-    void Awake()
+namespace Utils { 
+    public class MusicPlayer : MonoBehaviour
     {
-        if (instance != null && sceneName == SceneManager.GetActiveScene().name)
+    
+        static MusicPlayer instance = null;
+        static string sceneName = "";
+
+        void Awake()
         {
-            Destroy(gameObject);
+            if (instance != null && sceneName != SceneManager.GetActiveScene().name)
+            {
+                Destroy(instance.gameObject);
+                SetInstance();
+            }
+            else if (instance != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                SetInstance();
+            }
         }
-        else
+
+        private void SetInstance()
         {
             sceneName = SceneManager.GetActiveScene().name;
             instance = this;

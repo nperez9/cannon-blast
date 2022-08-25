@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        sfxManager = GetComponentInParent<SfxManager>();
+        sfxManager = GetComponentInChildren<SfxManager>();
         uiGameplayManager = GetComponentInChildren<UIGamePlayManager>();
     }
 
