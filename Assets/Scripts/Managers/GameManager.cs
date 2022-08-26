@@ -15,12 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CannonManager cannonManager = null;
     [SerializeField] private MenuManager menuManager = null;
 
-    // TODO: do a refactor on sounds
-    [SerializeField] private AudioClip blastSound = null;
-    [SerializeField] private AudioClip destroyCannonSound = null;
-    [SerializeField] private AudioClip pauseSound = null;
-    [SerializeField] private AudioClip winSound = null;
-
     private GameStates gameState = GameStates.GamePlay;
     private Cannon activeCannon = null;
     private bool isInCannon = false;
@@ -53,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameStates.Win;
         StopTime();
-        sfxManager.PlaySound(winSound);
+        sfxManager.WinSfx();
         menuManager.WonMenu();
     }
 
@@ -123,10 +117,10 @@ public class GameManager : MonoBehaviour
     {
         isInCannon = false;
         activeCannon.Explode();
-        sfxManager.PlaySound(destroyCannonSound);
+        sfxManager.DestroyCannonSfx();
 
         bullet.Fire(activeCannon.getShotDirection(), activeCannon.getForce());
-        sfxManager.PlaySound(blastSound);
+        sfxManager.blastSfx();
         activeCannon = null;
     }
 
@@ -153,7 +147,7 @@ public class GameManager : MonoBehaviour
             StopTime();
             gameState = GameStates.Pause;
             menuManager.PauseMenu();
-            sfxManager.PlaySound(pauseSound);
+            sfxManager.PauseSfx();
         }
         else
         {

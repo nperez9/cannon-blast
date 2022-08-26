@@ -24,7 +24,7 @@ namespace Prefabs {
         [SerializeField] Transform shotPoint = null;
 
         [SerializeField] bool isRotate = false;
-        [SerializeField] float rotateSpeed = 1.0f;
+        [SerializeField] float rotateSpeed = 200.0f;
         [SerializeField] int rotateDirection = 1;
         [SerializeField] float fromRotation = 0;
         [SerializeField] float toRotation = 370;
@@ -91,7 +91,7 @@ namespace Prefabs {
         private void RotateCannon()
         {
             float newRotation = transform.rotation.eulerAngles.z;
-            newRotation = newRotation + rotateSpeed * rotateDirection;
+            newRotation = newRotation + (rotateSpeed * Time.deltaTime) * rotateDirection;
 
             if (newRotation > toRotation)
             {
