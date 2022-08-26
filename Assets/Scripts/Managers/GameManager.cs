@@ -38,9 +38,10 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         gameState = GameStates.Lose;
-        StopTime();
+        sfxManager.LooseSfx();
         bullet.Dead();
         menuManager.LoseMenu();
+        StopTime();
     }
 
     public void Win()
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
     {
         collectables[collectibleIndex].gameObject.SetActive(false);
         uiGameplayManager.GrabCollectable(collectibleIndex);
+        sfxManager.GetCollectableSfx();
     }
 
     void Update()

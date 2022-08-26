@@ -14,10 +14,10 @@ GameObject:
   m_Layer: 0
   m_Name: SfxPlayer
   m_TagString: GameAudio
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9062829234223562939
 Transform:
   m_ObjectHideFlags: 0
@@ -51,7 +51,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 125
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736876992e306464ca970eb4b610cace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastSFX: {fileID: 0}
-  destroyCannonSFX: {fileID: 0}
-  pauseSFX: {fileID: 0}
-  winSFX: {fileID: 0}
-  getColletableSFX: {fileID: 0}
-  loseSFX: {fileID: 0}
+  blastSFX: {fileID: 8300000, guid: 43755d4d95694d3448ab2045cb46e613, type: 3}
+  destroyCannonSFX: {fileID: 8300000, guid: 8a84f91ca1516c2498423f8a088b4aa9, type: 3}
+  pauseSFX: {fileID: 8300000, guid: a9086a3456f7c6e45b9b8bb8c4c01756, type: 3}
+  winSFX: {fileID: 8300000, guid: 27145433bac14a54d847db97c123deb8, type: 3}
+  getColletableSFX: {fileID: 8300000, guid: a9f1f3cc4c28fa243bee68918ff61170, type: 3}
+  loseSFX: {fileID: 8300000, guid: c1e65c5c72eb21443b0ca9cf23c1f099, type: 3}

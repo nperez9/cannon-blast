@@ -19,7 +19,7 @@ namespace Managers {
             sfxSource = GetComponent<AudioSource>();
         }
 
-        public void PlaySound(AudioClip clip, float volume = 1f)
+        private void PlaySound(AudioClip clip, float volume = 1f)
         {
             try
             {
@@ -33,32 +33,32 @@ namespace Managers {
 
         public void blastSfx()
         {
-            sfxSource.PlayOneShot(blastSFX);
+            PlaySound(blastSFX, 0.8f);
         }
 
         public void DestroyCannonSfx()
         {
-            sfxSource.PlayOneShot(destroyCannonSFX);
+            PlaySound(destroyCannonSFX, 0.4f);
         }
     
         public void GetCollectableSfx()
         {
-            sfxSource.PlayOneShot(getColletableSFX);
+            PlaySound(getColletableSFX, 1.2f);
         }
 
         public void PauseSfx()
         {
-            sfxSource.PlayOneShot(pauseSFX);
+            PlaySound(pauseSFX, 0.8f);
         }
 
         public void WinSfx()
         {
-            sfxSource.PlayOneShot(winSFX);
+            PlaySound(winSFX, 0.7f);
         }
 
         public void LooseSfx()
         {
-            sfxSource.PlayOneShot(loseSFX);
+            PlaySound(loseSFX, 2f);
         }
     }
 }
