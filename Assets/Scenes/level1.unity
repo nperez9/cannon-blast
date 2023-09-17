@@ -1167,9 +1167,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1412827676}
     m_Modifications:
     - target: {fileID: 8638122714222816691, guid: f7e2436885adfc844a47e705a21d90a9, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638122714222816691, guid: f7e2436885adfc844a47e705a21d90a9, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 902817281}
+    - target: {fileID: 8638122714222816691, guid: f7e2436885adfc844a47e705a21d90a9, type: 3}
+      propertyPath: followX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8638122714222816700, guid: f7e2436885adfc844a47e705a21d90a9, type: 3}
       propertyPath: m_Name
       value: GamePlay Camera
