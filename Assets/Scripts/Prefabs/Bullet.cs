@@ -44,8 +44,4 @@ public class Bullet : MonoBehaviour
         spriteR.sprite = deadSprite;
     }
 
-    public void Reset()
-    {
-        
-    }
 }

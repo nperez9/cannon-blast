@@ -9,20 +9,21 @@ namespace Utils {
         [SerializeField] private Transform target = null;
         [SerializeField] private bool followX = false;
         [SerializeField] private bool followY = false;
-        [SerializeField] private float speed = 1.0f;
-        [SerializeField] private float offsetX = 0f;
-        [SerializeField] private float offsetY = 0f;
-        [SerializeField] private Vector2 offset = Vector2.zero;
 
+        private float speed = 8f;
         private Vector2 targetPostion = Vector2.zero;
+
+        private void Start()
+        {
+            targetPostion = transform.position;
+        }
 
         void Update()
         {
-            targetPostion.x = (followX) ? target.position.x : transform.position.x;
+            targetPostion.x = (followX) ? target.position.x : targetPostion.x;
             targetPostion.y = (followY) ? target.position.y : transform.position.y;
 
-
-            transform.position = Vector2.MoveTowards(transform.position, targetPostion + offset, Time.deltaTime * speed * 100);
+            transform.position = Vector2.Lerp(transform.position, targetPostion, Time.deltaTime * speed);
         }
     }
 }
